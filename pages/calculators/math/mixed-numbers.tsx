@@ -85,34 +85,63 @@ const MixedNumberCalculator: React.FC = () => {
 
   return (
     <Layout>
-      <div className='bg-white font-default shadow rounded-lg p-8'>
+      <div className='bg-white shadow rounded-lg p-8'>
         <h2 className='text-2xl font-bold mb-4'>Mixed Number Calculator</h2>
         <form onSubmit={handleSubmit} className='mb-4'>
-          <div className='flex items-center mb-4'>
-            <input
-              type='number'
-              placeholder='Whole'
-              className='border border-gray-300 rounded-md p-2 mr-2'
-              value={wholeNum1}
-              onChange={(e) => setWholeNum1(e.target.value)}
-            />
-            <input
-              type='number'
-              placeholder='Numerator'
-              className='border border-gray-300 rounded-md p-2 mr-2'
-              value={num1}
-              onChange={(e) => setNum1(e.target.value)}
-            />
-            <span>/</span>
-            <input
-              type='number'
-              placeholder='Denominator'
-              className='border border-gray-300 rounded-md p-2 ml-2'
-              value={denom1}
-              onChange={(e) => setDenom1(e.target.value)}
-            />
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-4'>
+            <div className='flex items-center'>
+              <input
+                type='number'
+                placeholder='Whole'
+                className='border border-gray-300 rounded-md p-2 mr-2 w-1/4'
+                value={wholeNum1}
+                onChange={(e) => setWholeNum1(e.target.value)}
+              />
+              <input
+                type='number'
+                placeholder='Numerator'
+                className='border border-gray-300 rounded-md p-2 mr-2 w-1/4'
+                value={num1}
+                onChange={(e) => setNum1(e.target.value)}
+              />
+              <span>/</span>
+              <input
+                type='number'
+                placeholder='Denominator'
+                className='border border-gray-300 rounded-md p-2 ml-2 w-1/4'
+                value={denom1}
+                onChange={(e) => setDenom1(e.target.value)}
+              />
+            </div>
+            <div className='flex items-center'>
+              <input
+                type='number'
+                placeholder='Whole'
+                className='border border-gray-300 rounded-md p-2 mr-2 w-1/4'
+                value={wholeNum2}
+                onChange={(e) => setWholeNum2(e.target.value)}
+              />
+              <input
+                type='number'
+                placeholder='Numerator'
+                className='border border-gray-300 rounded-md p-2 mr-2 w-1/4'
+                value={num2}
+                onChange={(e) => setNum2(e.target.value)}
+              />
+              <span>/</span>
+              <input
+                type='number'
+                placeholder='Denominator'
+                className='border border-gray-300 rounded-md p-2 ml-2 w-1/4'
+                value={denom2}
+                onChange={(e) => setDenom2(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className='mb-4'>
+            <label className='block text-sm font-bold mb-2'>Operator:</label>
             <select
-              className='border border-gray-300 rounded-md p-2 mx-4'
+              className='border border-gray-300 rounded-md p-2 w-full md:w-auto'
               value={operator}
               onChange={(e) => setOperator(e.target.value)}
             >
@@ -121,28 +150,6 @@ const MixedNumberCalculator: React.FC = () => {
               <option>*</option>
               <option>/</option>
             </select>
-            <input
-              type='number'
-              placeholder='Whole'
-              className='border border-gray-300 rounded-md p-2 mr-2'
-              value={wholeNum2}
-              onChange={(e) => setWholeNum2(e.target.value)}
-            />
-            <input
-              type='number'
-              placeholder='Numerator'
-              className='border border-gray-300 rounded-md p-2 mr-2'
-              value={num2}
-              onChange={(e) => setNum2(e.target.value)}
-            />
-            <span>/</span>
-            <input
-              type='number'
-              placeholder='Denominator'
-              className='border border-gray-300 rounded-md p-2 ml-2'
-              value={denom2}
-              onChange={(e) => setDenom2(e.target.value)}
-            />
           </div>
           <button
             type='submit'
@@ -153,8 +160,8 @@ const MixedNumberCalculator: React.FC = () => {
         </form>
         {result && (
           <div>
-            <h3 className='text-xl font-bold mb-2'>Result</h3>
-            <pre className='bg-gray-100 p-4 rounded'>{result}</pre>
+            <h3 className='text-xl font-bold mb-2'>Result:</h3>
+            <p>{result}</p>
           </div>
         )}
       </div>
