@@ -5,6 +5,10 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontFamily: {
+        logo: ["--font-dancing", "system-ui", "sans-serif"],
+        default: ["--font-open-sans", "system-ui", "sans-serif"],
+      },
       backgroundColor: {
         "pastel-blue": "#00235B",
         "pastel-green": "#539165",
