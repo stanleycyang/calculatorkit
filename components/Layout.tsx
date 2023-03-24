@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 type Props = {
   children?: ReactNode;
@@ -14,11 +15,9 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     </Head>
-    <header className='bg-white shadow p-4'>
+    <header className='bg-white shadow p-4 flex justify-center'>
       <Link href='/'>
-        <h1 className='text-3xl font-logo font-bold text-center'>
-          CalculatorKit
-        </h1>
+        <Image src='/logo.png' alt='CalculatorKit' width={300} height={75} />
       </Link>
     </header>
     <main className='font-default'>{children}</main>
